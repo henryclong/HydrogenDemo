@@ -12,7 +12,7 @@
     "build": "yarn build:client && yarn build:server && yarn build:worker",
     "build:client": "vite build --outDir dist/client --manifest",
     "build:server": "vite build --outDir dist/server --ssr @shopify/hydrogen/platforms/node",
-    "build:worker": "cross-env WORKER=true vite build --outDir dist/worker --ssr @shopify/hydrogen/platforms/worker",
+    "build:worker": "cross-env WORKER=true vite build --outDir dist/worker --ssr worker",
     "serve": "node --enable-source-maps dist/server",
     "preview": "npx @shopify/hydrogen-cli@latest preview",
     "test": "WATCH=true vitest",
@@ -37,6 +37,8 @@
     "vitest": "^0.5.9"
   },
   "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.2.0",
+    "@cloudflare/wrangler": "^1.19.11",
     "@headlessui/react": "^1.5.0",
     "@shopify/hydrogen": "^0.13.0",
     "body-parser": "^1.19.1",
